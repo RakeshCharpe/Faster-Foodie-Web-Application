@@ -7,7 +7,7 @@ const Header = () => {
         <img
           className="logo"
                   src={require('../../images/images-removebg-preview.png')}></img>
-              <p>Faster Foodie 🏃‍♂️</p>
+              <p>Faster Foodie</p>
       </div>
       <div className="nav-items">
         <ul>

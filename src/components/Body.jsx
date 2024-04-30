@@ -1,11 +1,15 @@
 import RestaurantCard from "./RestaurantCard";
-import { useState } from "react";
+import { useState , useEffect } from "react";
 import restlists from "../Utils/mockData";
 
 const Body = () => {
   // React useState Hooks is used to change the state of components
   const [filteredlist, setfilteredlist] = useState(restlists);
-  console.log(filteredlist);
+
+  useEffect(() => {
+    console.log("useEffect called");
+  }, []);
+  
   return (
     <div className="body">
       <div className="filter-btn">
@@ -15,7 +19,7 @@ const Body = () => {
             const filtered = filteredlist.filter(
               (res) => res.info.avgRating > 4
             );
-            console.log(filtered);
+           
             setfilteredlist(filtered);
           }}
         >

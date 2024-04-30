@@ -45,4 +45,15 @@
    React Element which is given a object is called virtual dom 
 
 > Diff Algorithm means comparing the updated virtual dom ( object )and earlier virtual dom, tries to find out the difference then update the actual dom .
-> https://github.com/acdlite/react-fiber-architecture
+> https://github.com/acdlite/react-fiber-architecture 
+
+> Monolithic means all the services in written in single projects , complexity triggered while working simultaneously
+> Microservices means each services has different project and written separately . No one interrupt by other services.
+> Two Approaches to fetch the data from backend
+
+       1> Loads -> API call -> Render : in this case till the api fetch the data UI not render
+       2> Loads -> Render -> API call -> Re-render
+
+       In Reactjs we used approach 2 render the whatever UI has , as API fetch the data Re-render the UI as updated data it is better for user experience
+
+> useEffect run after the rendering the UI , this is the purpose of useEffect
