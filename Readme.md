@@ -1,4 +1,5 @@
-  <!-- Header
+# Structure of Application
+   Header
     logo
      Nav item
   Body
@@ -8,4 +9,4 @@
   Footer
     Copyright
     Address
-    Contacts -->
+    Contacts 
