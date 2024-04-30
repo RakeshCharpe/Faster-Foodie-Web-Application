@@ -37,8 +37,17 @@
   /* width: 50%; */
   margin: 5px 0px;
 }
-.search-Bar:hover {
+.btn{
+  margin: 5px;
+  background-color:rgb(249, 243, 226) ;
+  border-radius: 10px;
+  width: 150px;
+  border: 1px solid rgb(241, 211, 147);
+  height: 25px;
+}
+.btn:hover {
   cursor: pointer;
+  background-color:rgb(241, 211, 147) ;
 }
 .rest-container {
   display: flex;
