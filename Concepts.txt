@@ -27,14 +27,22 @@
          export const Components;
          import {Components} from "path";
 
-> All framework, libraries are tried to solved the data and ui consistent/sync changes (Data updated but UI is not updated as per filter of data)
+> All framework, libraries are tried to solved the data and ui layer sync changes (Data updated but UI is not updated as per filter of data)
 > Faster , optimize DOM manipulation , virtual DOM 
 > Super powerful variable made by Hooks called useState , Normal JS Variable 
 > Hooks is just normal js utility function that is gives to us by react which have some inbuilt property
 > React Hooks 
        useState() : Super powerful state variable in react , State means maintain the state of components
        useEffect() :
-> const [list ,  setList] = useState([])(default value);
+> const [list ,  setList] = useState([])(default value); function is called to trigger re-rendering
 > To change the state of components or value we can't change using "=" but using setList() function ;
 > Whenever the state variable is update react re-renders the components;
 > DOM manipulation is faster in Reactjs that's why it is faster then other framework and libraries .
+> React uses Reconciliation Algorithm React-16 which uses React Fiber in React-18 .
+              *                   =>          *
+       * * * * * * * * *                    * * *
+ > Virtual DOM is not the actual Dom it is the representation of Actual DOM.
+   React Element which is given a object is called virtual dom 
+
+> Diff Algorithm means comparing the updated virtual dom ( object )and earlier virtual dom, tries to find out the difference then update the actual dom .
+> https://github.com/acdlite/react-fiber-architecture
