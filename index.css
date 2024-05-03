@@ -30,6 +30,20 @@
   background-color: rgb(249, 243, 226);
   border-radius: 5px;
 }
+.login{
+ background-color:#fff ; 
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  /* width: ; */
+  padding: 1rem;
+  font-size: 15px;
+ font-family: 'Courier New', Courier, monospace;
+}
+.login:hover{
+  background-color:rgb(249, 243, 226) ;
+  
+}
 .search-Bar {
   border-radius: 20px;
   border: 1px solid rgb(241, 211, 147);
@@ -99,4 +113,16 @@
 }
 .contact-info p {
   font-size: small;
+}
+
+.shimmer-container{
+  display: flex;
+  flex-wrap: wrap;
+}
+.shimmer-card{
+  margin: 3px ;
+  height: 400px;
+  width: 200px;
+  background-color: rgb(249, 243, 226); 
+  border-radius: 10px;
 }

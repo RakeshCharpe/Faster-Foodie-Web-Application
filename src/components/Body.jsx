@@ -1,16 +1,30 @@
 import RestaurantCard from "./RestaurantCard";
 import { useState , useEffect } from "react";
 import restlists from "../Utils/mockData";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
   // React useState Hooks is used to change the state of components
-  const [filteredlist, setfilteredlist] = useState(restlists);
+  const [filteredlist, setfilteredlist] = useState([]);
 
   useEffect(() => {
-    console.log("useEffect called");
+     fetchData();
   }, []);
+
+  const fetchData = async () => {
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=25.4358011&lng=81.846311&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+    );
+    const json = await data.json();
+    console.log(json);
+    // optional chaining
+    setfilteredlist(
+      json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+  }
   
-  return (
+
+  return filteredlist.length === 0 ?  <Shimmer /> : (
     <div className="body">
       <div className="filter-btn">
         <button

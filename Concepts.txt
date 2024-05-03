@@ -7,7 +7,6 @@
 > (restlists.map((restaurant) => <RestaurantCard resData={restaurant}/>))
 > Whenever we used map or loop on any element must have to add unquie or id .
 > unique "key" property means each item has uniquely represent .
-> Whenever we used map or loop on any element must have to add unique key or id .
 > Why need to add unique id ? Case : like if any restaurant container I need to add new restaurant card , react need to add card in existing cards lists with optimization but react didn't get id where to add new card So for react all cards are new so it re-renders the all cards and it is a costlier operation of DOM , that's why need to add unique key or id so card add in optimized way.
 > React itself says never used index as unique key . why?{***------important------***}
 > Everything whatever we can do in react is also do it by html , css , js then why react ? To make developer experience very fast and optimization web pages in backend side .
@@ -34,11 +33,11 @@
 > React Hooks 
        useState() : Super powerful state variable in react , State means maintain the state of components
        useEffect() :
-> const [list ,  setList] = useState([])(default value); function is called to trigger re-rendering
+> const [list ,  setList] = useState([])(default value); function is called to trigger re-rendering .
+> whenever the state variable change using setList() method react will render the header/components .
 > To change the state of components or value we can't change using "=" but using setList() function ;
-> Whenever the state variable is update react re-renders the components;
 > DOM manipulation is faster in Reactjs that's why it is faster then other framework and libraries .
-> React uses Reconciliation Algorithm React-16 which uses React Fiber in React-18 .
+> React uses Reconciliation Algorithm called in React-16 which uses React Fiber in React-18 .
               *                   =>          *
        * * * * * * * * *                    * * *
  > Virtual DOM is not the actual Dom it is the representation of Actual DOM.
@@ -51,9 +50,16 @@
 > Microservices means each services has different project and written separately . No one interrupt by other services.
 > Two Approaches to fetch the data from backend
 
-       1> Loads -> API call -> Render : in this case till the api fetch the data UI not render
+       1> Loads -> API call -> Render : in this case till the api fetch the data on UI not render
        2> Loads -> Render -> API call -> Re-render
 
-       In Reactjs we used approach 2 render the whatever UI has , as API fetch the data Re-render the UI as updated data it is better for user experience
+       In Reactjs we used approach 2 render the whatever data in UI has , as API fetch the data Re-render the UI as updated data it is better for user experience
 
 > useEffect run after the rendering the UI , this is the purpose of useEffect
+> useEffect consist of two thing arrow function and dependency array, useEffect(()=>{},[])
+> fetch() given by browser not by Js 
+> CORS Policy : Our browser blocked to call from one origin to another origin
+> Optional Chaining ** important ** list?.cards?.card?.
+> Shimmer UI modern concept blank skelton of UI  *** important ***
+> Show something to the screen till the data fetch for better user experience . 
+> Conditional rendering : rendering on the basis of condition .
