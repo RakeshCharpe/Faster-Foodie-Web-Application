@@ -36,6 +36,8 @@
 > const [list ,  setList] = useState([])(default value); function is called to trigger re-rendering .
 > whenever the state variable change using setList() method react will render the header/components .
 > To change the state of components or value we can't change using "=" but using setList() function ;
+> Re-Rendering whole component not only specific component .
+> How const variable is changes using setList function in usestate ? but it can't change the variable whole component is re-render and now same const variable is new for  the re-render component 
 > DOM manipulation is faster in Reactjs that's why it is faster then other framework and libraries .
 > React uses Reconciliation Algorithm called in React-16 which uses React Fiber in React-18 .
               *                   =>          *
@@ -63,3 +65,5 @@
 > Shimmer UI modern concept blank skelton of UI  *** important ***
 > Show something to the screen till the data fetch for better user experience . 
 > Conditional rendering : rendering on the basis of condition .
+> when typing in search box each time components are re-render.
+> Why React is fast , it has concept of virtual DOM , it has Reconciliation Algorithm which makes it faster in which it compare the previous dom and updated dom and compare it so well and efficiently instead of updated the whole DOM it findout the diff component in dom and updated that only which makes it faster .
