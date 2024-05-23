@@ -3,9 +3,9 @@
 > Config Driven UI: Controlling UI using data or config which comes from backend . Config is nothing but the data based on that the carousel varies like data is different for pune , diff for mumbai or delhi etc .{***------important------***}
 > res.cloudinary is CDN for image used by SWIGGY application to store all the images there.
 > map , filter , reduce usage of js is most important in react.
-> resData?.info;
+> resData?.info; optional chaining
 > (restlists.map((restaurant) => <RestaurantCard resData={restaurant}/>))
-> Whenever we used map or loop on any element must have to add unquie or id .
+> Whenever we used map or loop on any element must have to add unique key or id .
 > unique "key" property means each item has uniquely represent .
 > Why need to add unique id ? Case : like if any restaurant container I need to add new restaurant card , react need to add card in existing cards lists with optimization but react didn't get id where to add new card So for react all cards are new so it re-renders the all cards and it is a costlier operation of DOM , that's why need to add unique key or id so card add in optimized way.
 > React itself says never used index as unique key . why?{***------important------***}
@@ -67,3 +67,6 @@
 > Conditional rendering : rendering on the basis of condition .
 > when typing in search box each time components are re-render.
 > Why React is fast , it has concept of virtual DOM , it has Reconciliation Algorithm which makes it faster in which it compare the previous dom and updated dom and compare it so well and efficiently instead of updated the whole DOM it findout the diff component in dom and updated that only which makes it faster .
+> If no dependency array => useEffect is called on every render .
+> If dependency array is empty = [] => useEffect is called on initial render(just once)
+> If dependency array is non empty => useEffect called everytime when state changes of dependency array

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { LOGO_URL } from "../Utils/constants";
 
 const Header = () => {
-  const [btntext , setbtntext] = useState("Login");
+  const [btntext, setbtntext] = useState("Login");
   return (
     <div className="header">
       <div className="logo-container">
@@ -19,11 +19,14 @@ const Header = () => {
           <li>Contact</li>
           <li>Cart</li>
           <li>Profile</li>
-          <button className="login" onClick={
-            () => {
-               (btntext === "Login") ? setbtntext("Logout") : setbtntext("Login");   
-            }
-            }>{ btntext }</button>
+          <button
+            className="login"
+            onClick={() => {
+              btntext === "Login" ? setbtntext("Logout") : setbtntext("Login");
+            }}
+          >
+            {btntext}
+          </button>
         </ul>
       </div>
     </div>
