@@ -75,3 +75,7 @@
 > Never create useState in if else ,  for loop it makes code inconsistent .
 > React Router 
 > whenever create routes we have to used routing configuration
+> Use CreateBrowserRouter for the routing in react
+> If url not found we can create separate component for error and render using errorElement .
+> useRouteError hooks gives us all error which is in page so using this we can show detailed msg to user about the error
+> children route 

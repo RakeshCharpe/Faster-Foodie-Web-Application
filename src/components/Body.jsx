@@ -4,7 +4,7 @@ import restlists from "../Utils/mockData";
 import Shimmer from "./Shimmer";
 
 const Body = () => {
-  
+
   // React useState Hooks is used to change the state of components
   const [listOfRestaurants, setlistOfRestaurants] = useState([]);
   const [filteredRestaurant, setfilteredRestaurant] =
