@@ -68,5 +68,10 @@
 > when typing in search box each time components are re-render.
 > Why React is fast , it has concept of virtual DOM , it has Reconciliation Algorithm which makes it faster in which it compare the previous dom and updated dom and compare it so well and efficiently instead of updated the whole DOM it findout the diff component in dom and updated that only which makes it faster .
 > If no dependency array => useEffect is called on every render .
-> If dependency array is empty = [] => useEffect is called on initial render(just once)
-> If dependency array is non empty => useEffect called everytime when state changes of dependency array
+> If dependency array is empty = [] => useEffect is called on initial render(just once) .
+> If dependency array is non empty => useEffect called everytime when state changes of dependency array .
+> Never used useState out side of the component.
+> Always try to use hooks at start of the components.
+> Never create useState in if else ,  for loop it makes code inconsistent .
+> React Router 
+> whenever create routes we have to used routing configuration
