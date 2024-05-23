@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { LOGO_URL } from "../Utils/constants";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [btntext, setbtntext] = useState("Login");
@@ -11,7 +12,7 @@ const Header = () => {
   // if dependency array has any value => useEffect called only when state of that value changes
   useEffect(() => {
     console.log("useEffect");
-   },[]);
+  }, [btntext]);
   return (
     <div className="header">
       <div className="logo-container">
@@ -23,9 +24,15 @@ const Header = () => {
       </div>
       <div className="nav-items">
         <ul>
-          <li >Home</li>
-          <li>About</li>
-          <li>Contact</li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact</Link>
+          </li>
           <li>Cart</li>
           <li>Profile</li>
           <button

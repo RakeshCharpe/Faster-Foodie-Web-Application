@@ -30,6 +30,9 @@
   background-color: rgb(249, 243, 226);
   border-radius: 5px;
 }
+a{
+  text-decoration: none;
+}
 .login {
   background-color: #fff;
   cursor: pointer;
