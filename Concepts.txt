@@ -86,3 +86,7 @@
 > useParams hooks provided by react router dom which is used to get parameter from the url 
 > Class based components are older way to creating components 
 > Interview Question asked Class Based Component ?
+> Class based components has render method which return jsx .
+> functional components which has return jsx .
+> To received the props in class based component we need to used contructor to get props and super(props) to add "this.props"
+> Why need super(props) ?

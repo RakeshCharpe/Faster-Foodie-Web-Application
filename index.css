@@ -132,3 +132,10 @@ a {
   background-color: rgb(249, 243, 226);
   border-radius: 10px;
 }
+
+.user-card{
+  padding: 5px 15px;
+  border: 1px solid grey;
+  border-radius: 10px;
+  width: 20rem;
+}
