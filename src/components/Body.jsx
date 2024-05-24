@@ -1,18 +1,17 @@
 import RestaurantCard from "./RestaurantCard";
-import { useState , useEffect } from "react";
+import { useState, useEffect } from "react";
 import restlists from "../Utils/mockData";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
-
   // React useState Hooks is used to change the state of components
-  const [listOfRestaurants, setlistOfRestaurants] = useState([]);
-  const [filteredRestaurant, setfilteredRestaurant] =
-    useState([]);
+  const [listOfRestaurants, setlistOfRestaurants] = useState(null);
+  const [filteredRestaurant, setfilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
-  
+
   useEffect(() => {
-     fetchData();
+    fetchData();
   }, []);
 
   //whenever state variable update , react triggers a reconsilation cycle(re-render the component)
@@ -32,10 +31,9 @@ const Body = () => {
     setfilteredRestaurant(
       json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
-  }
-  
+  };
 
-  return  listOfRestaurants.length == 0 ? (
+  return listOfRestaurants === null ? (
     <Shimmer />
   ) : (
     <div className="body">
@@ -53,7 +51,8 @@ const Body = () => {
             onClick={() => {
               //filter the restaurant cards and update the UI
               console.log(searchText);
-              const searchfilterlist = listOfRestaurants.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase())
+              const searchfilterlist = listOfRestaurants.filter((res) =>
+                res.info.name.toLowerCase().includes(searchText.toLowerCase())
               );
               setfilteredRestaurant(searchfilterlist);
             }}
@@ -76,7 +75,12 @@ const Body = () => {
       </div>
       <div className="rest-container">
         {filteredRestaurant.map((restaurant) => (
-          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+          <Link
+            key={restaurant.info.id}
+            to={"/restaurants/" + restaurant.info.id}
+          >
+            <RestaurantCard resData={restaurant} />
+          </Link>
         ))}
       </div>
     </div>

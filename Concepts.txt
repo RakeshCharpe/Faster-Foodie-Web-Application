@@ -83,3 +83,4 @@
 > It is resolved using link component given to us by react-router-dom we navigate to other page without reload the page  <Link to="/about">About</Link> refresh the component
 > Two type of routing in web application ,  Client Side Routing , Server Side Routing
 > React make single page application via Client Side Routing by just refresh the components
+> useParams hooks provided by react router dom which is used to get parameter from the url 
