@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const Body = () => {
   // React useState Hooks is used to change the state of components
   const [listOfRestaurants, setlistOfRestaurants] = useState(null);
-  const [filteredRestaurant, setfilteredRestaurant] = useState([]);
+  const [filteredRestaurant, setfilteredRestaurant] = useState(null);
   const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
@@ -33,9 +33,8 @@ const Body = () => {
     );
   };
 
-  return listOfRestaurants === null ? (
-    <Shimmer />
-  ) : (
+  if(listOfRestaurants === null) return <Shimmer />
+  return (
     <div className="body">
       <div className="filter">
         <div className="search">
