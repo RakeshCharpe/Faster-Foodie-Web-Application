@@ -90,3 +90,27 @@
 > functional components which has return jsx .
 > To received the props in class based component we need to used contructor to get props and super(props) to add "this.props"
 > Why need super(props) ?
+> State created when class instance created
+> Loading class component means creating new instance of class
+> Always created state variable in constructor **Important**
+> this.setState function in react to change the state of state variable ** Important **
+> const [count , setCount] = useState([]); in functional based components
+> class About extends React.component{
+       constructor(props){
+              super(props)
+              this.state = {
+                     count:1,
+              }
+       }
+       this.setState({
+              count: this.state.count + 1,
+       })
+}  In class Based component , it update the only those state variable which is mentioned in this.setState({})
+> What is class based component life cycle in react ?
+> loading/mounting/render component in webpage 
+> When class based component is loading contructor is called then render is called then componentDidMount() called this is the mount cycle or life cycle of the react ** Important ** 
+> Contructor > Render > componentDidMount
+> componentDidMount() used to make API calls like we used useEffect to make calls in functional component.
+> React component life cycle diagram
+> In DOM Manipulation React render the component combinely then it called didmount function which makes react faster
+> ComponentDidUpdate() , ComponentDidMount() , ComponentWillUnmount()
