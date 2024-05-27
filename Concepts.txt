@@ -114,3 +114,5 @@
 > React component life cycle diagram
 > In DOM Manipulation React render the component combinely then it called didmount function which makes react faster
 > ComponentDidUpdate() , ComponentDidMount() , ComponentWillUnmount()
+> Make component which have only single responsibility . 
+> Make customHooks in utility directory for best practice .
