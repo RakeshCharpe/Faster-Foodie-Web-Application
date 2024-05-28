@@ -21,10 +21,9 @@
 
 
 
-# Namaste Food
+# Structure of  Faster Foodie Application
 
 
-/**
  * Header
  *  - Logo
  *  - Nav Items
@@ -39,7 +38,7 @@
  *  - Links
  *  - Address
  *  - Contact
- */
+ 
 
 
 
