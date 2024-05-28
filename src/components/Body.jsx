@@ -3,19 +3,20 @@ import { useState, useEffect } from "react";
 import restlists from "../Utils/mockData";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../Utils/useOnlineStatus";
 
 const Body = () => {
   // React useState Hooks is used to change the state of components
   const [listOfRestaurants, setlistOfRestaurants] = useState([]);
   const [filteredRestaurant, setfilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
-
+  
   useEffect(() => {
     fetchData();
   }, []);
 
   //whenever state variable update , react triggers a reconsilation cycle(re-render the component)
-  console.log("re-render");
+  
 
   const fetchData = async () => {
     const data = await fetch(
@@ -23,7 +24,7 @@ const Body = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1165549&lng=79.05617269999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
-    console.log(json);
+    //console.log(json);
     // optional chaining
     setlistOfRestaurants(
       json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
@@ -32,6 +33,12 @@ const Body = () => {
       json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
+
+  const onlineStatus = useOnlineStatus();
+  if (onlineStatus === false) return <h1>Look's like you are offline !!! Please check your connection</h1>
+
+
+
   if (listOfRestaurants.length === 0) return <Shimmer />;
   return (
     <div className="body">
