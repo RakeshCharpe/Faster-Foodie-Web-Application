@@ -40,7 +40,9 @@ const Header = () => {
             <Link to="/grocery">Grocery</Link>
           </li>
           <li>Cart</li>
-          <li>Profile</li>
+          <li>
+            <Link to="/profile">Profile</Link>
+          </li>
           <button
             className="login"
             onClick={() => {

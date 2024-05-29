@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Body from "./components/Body";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-// import About from "./components/About";
+import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
@@ -15,7 +15,7 @@ import RestaurantMenu from "./components/RestaurantMenu";
 
 // This to make the separate bundle for grocery
 const Grocery = lazy(() => import("./components/Grocery"));
-const About = lazy(() => import("./components/About"));
+const Profile = lazy(() => import("./components/Profile"));
 
 
 
@@ -45,9 +45,7 @@ const appRouter = createBrowserRouter([
       {
         path: "/about",
         element: (
-          <Suspense fallback={<h2>Loading...</h2>}>
-            <About />
-          </Suspense>
+          <About /> 
         ),
       },
       {
@@ -61,6 +59,15 @@ const appRouter = createBrowserRouter([
             <Grocery />
           </Suspense>
         ),
+      },
+      {
+        path: "/profile",
+        element: (
+          <Suspense fallback={<h2>Loading...</h2>}>
+            <Profile />
+          </Suspense>
+        )
+        
       },
       {
         path: "/restaurants/:resId",

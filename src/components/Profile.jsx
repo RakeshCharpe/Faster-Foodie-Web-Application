@@ -1,22 +1,21 @@
 import React from "react";
 
-class UserClass extends React.Component {
+class Profile extends React.Component {
+  constructor(props) {
+    super(props);
 
-    constructor(props) {
-      super(props);
-      
-      this.state = {
-        name: "UserName",
-        repo: "0",
-        follower: "0",
-        following: "0",
-        bio:"Developer"
-      }
-      // console.log(this.props.name+"constructor");
+    this.state = {
+      name: "UserName",
+      repo: "0",
+      follower: "0",
+      following: "0",
+      bio: "Developer",
+    };
+    // console.log(this.props.name+"constructor");
   }
-  
+
   async componentDidMount() {
-     console.log(this.props.name + " did mount ");
+    console.log(this.props.name + " did mount ");
     const data = await fetch("https://api.github.com/users/RakeshCharpe");
     const json = await data.json();
     console.log(json);
@@ -26,22 +25,20 @@ class UserClass extends React.Component {
       follower: json.followers,
       following: json.following,
       profile: json.avatar_url,
-      bio: json.bio
-      
-    })
-
+      bio: json.bio,
+    });
   }
 
   componentDidUpdate() {
-      console.log("did update");
-    }
+    console.log("did update");
+  }
 
   render() {
     // const {  location } = this.props;
-    const { name , follower , following , repo , profile , bio} = this.state;
-    
+    const { name, follower, following, repo, profile, bio } = this.state;
+
     // console.log(this.props.name + "render");
-    
+
     return (
       <div className="user-card">
         <h2>Github Profile</h2>
@@ -68,4 +65,4 @@ class UserClass extends React.Component {
   }
 }
 
-export default UserClass;
+export default Profile;
