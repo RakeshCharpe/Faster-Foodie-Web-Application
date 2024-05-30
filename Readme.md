@@ -1,4 +1,6 @@
+
 ![Screenshot 2024-05-30 000932](https://github.com/RakeshCharpe/Faster-Foodie-Web-Application/assets/69101908/56830693-37bc-437f-8765-dd3875ab735e)
+![Screenshot 2024-05-31 010159](https://github.com/RakeshCharpe/Faster-Foodie-Web-Application/assets/69101908/9071a996-aec6-4315-90c9-fc9c703e3b2a)
 
 
 # Parcel
