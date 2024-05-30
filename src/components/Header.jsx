@@ -16,35 +16,37 @@ const Header = () => {
     console.log("useEffect");
   }, [btntext]);
   return (
-    <div className="header">
-      <div className="logo-container">
+    <div className="flex justify-between bg-orange-300 shadow-lg m-2 rounded-md">
+      <div className="flex items-center p-4">
         <img
-          className="logo"
+          className="w-12"
           src={require("../../images/images-removebg-preview.png")}
         ></img>
-        <p>Faster Foodie</p>
+        <p className="">Faster Foodie</p>
       </div>
-      <div className="nav-items">
-        <ul>
+      <div className="nav-items flex">
+        <ul className="flex items-center space-x-4 p-4 ">
           <li>OnlineStatus:{onlineStatus ? "🟢" : "🔴"}</li>
-          <li>
+          <li className="hover:text-white">
             <Link to="/">Home</Link>
           </li>
-          <li>
+          <li className="hover:text-white">
             <Link to="/about">About</Link>
           </li>
-          <li>
+          <li className="hover:text-white">
             <Link to="/contact">Contact</Link>
           </li>
-          <li>
+          <li className="hover:text-white">
             <Link to="/grocery">Grocery</Link>
           </li>
-          <li>Cart</li>
-          <li>
+          <li className="hover:text-white">
+            <Link to="/cart">Cart</Link>
+          </li>
+          <li className="hover:text-white">
             <Link to="/profile">Profile</Link>
           </li>
           <button
-            className="login"
+            className="hover:text-white"
             onClick={() => {
               btntext === "Login" ? setbtntext("Logout") : setbtntext("Login");
             }}
