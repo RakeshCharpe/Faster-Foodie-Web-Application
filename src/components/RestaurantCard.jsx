@@ -3,10 +3,16 @@ import { CDN_URL } from "../Utils/constants";
 const RestaurantCard = (props) => {
   //console.log(props);
   const { resData } = props;
-  const { cloudinaryImageId, name, locality, avgRating, cuisines, sla } =
-    resData?.info;
+  const {
+    cloudinaryImageId,
+    name,
+    locality,
+    avgRating,
+    cuisines,
+    sla,
+  } = resData?.info;
   return (
-    <div className="m-4 p-2 w-[250px] h-[450px] bg-orange-100 rounded-md hover:bg-orange-200 hover:shadow-lg leading-6">
+    <div className="m-4 p-2 w-[250px] h-[450px] bg-orange-50 rounded-md hover:bg-orange-200 hover:shadow-lg leading-6">
       <img
         src={CDN_URL + cloudinaryImageId}
         className="rounded-md w-[240px] h-[230px] mb-2"
@@ -21,4 +27,24 @@ const RestaurantCard = (props) => {
   );
 };
 
+
+//Higher order Component
+
+// Input as RestaurantCard => RestaurantCardPromoted
+
+export const withPromotedLable = (RestaurantCard ) => {
+  
+  return (props) => {
+    const { resData } = props;
+    return (
+      <div>
+        <label className="absolute p-2 rounded-md text-sm ml-6 mt-2 bg-orange-800 text-white">
+          {resData?.info.aggregatedDiscountInfoV3?.header}{" "}
+          {resData?.info.aggregatedDiscountInfoV3?.subHeader}
+        </label>
+        <RestaurantCard {...props} />
+      </div>
+    );
+  }
+}
 export default RestaurantCard;

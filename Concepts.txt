@@ -123,3 +123,4 @@
 > But it gives us error because initially react have only index.jsx bundle and when we click on Grocery tab it's not there it takes little bit time that's why it gives us error just for milliseconds delay in response for that react has { Suspense } component
 > Wrap component in Suspense component so till loading we show something 
 <Suspense> <Grocery /> <Suspense>
+> Higher order component is a function which takes the component and return the component .

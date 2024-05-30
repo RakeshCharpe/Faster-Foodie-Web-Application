@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withPromotedLable } from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import restlists from "../Utils/mockData";
 import Shimmer from "./Shimmer";
@@ -10,6 +10,7 @@ const Body = () => {
   const [listOfRestaurants, setlistOfRestaurants] = useState([]);
   const [filteredRestaurant, setfilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const RestaurantCardPromoted = withPromotedLable(RestaurantCard);
   
   useEffect(() => {
     fetchData();
@@ -24,7 +25,7 @@ const Body = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1165549&lng=79.05617269999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
-    //console.log(json);
+    console.log(json);
     // optional chaining
     setlistOfRestaurants(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
@@ -36,7 +37,7 @@ const Body = () => {
 
   const onlineStatus = useOnlineStatus();
   if (onlineStatus === false) return <h1>Look's like you are offline !!! Please check your connection</h1>
-
+  console.log(listOfRestaurants);
 
 
   if (listOfRestaurants.length === 0) return <Shimmer />;
@@ -46,7 +47,7 @@ const Body = () => {
         <div className="flex">
           <input
             type="text"
-            className="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-full py-1 pl-9 pr-3 shadow-sm focus:outline-none focus:border-orange-500 focus:ring-orange-500 focus:ring-1 text-sm mr-2"
+            className="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-orange-400 rounded-full py-1 pl-9 pr-3 shadow-sm focus:outline-none focus:border-orange-500 focus:ring-orange-500 focus:ring-1 text-sm mr-2"
             value={searchText}
             placeholder="search restaurants..."
             onChange={(e) => {
@@ -54,7 +55,7 @@ const Body = () => {
             }}
           ></input>
           <button
-            className="bg-orange-300 hover:bg-orange-400 rounded-full px-4 mr-2 text-sm"
+            className="bg-orange-400 hover:bg-orange-500 rounded-full px-4 mr-2 text-sm"
             onClick={() => {
               //filter the restaurant cards and update the UI
               console.log(searchText);
@@ -68,7 +69,7 @@ const Body = () => {
           </button>
         </div>
         <button
-          className="bg-orange-300 hover:bg-orange-400 rounded-full px-4 py-1 sm:text-sm"
+          className="bg-orange-400 hover:bg-orange-500 rounded-full px-4 py-1 sm:text-sm"
           onClick={() => {
             const filtered = listOfRestaurants.filter(
               (res) => res.info.avgRating > 4
@@ -86,7 +87,13 @@ const Body = () => {
             key={restaurant.info.id}
             to={"/restaurants/" + restaurant.info.id}
           >
-            <RestaurantCard resData={restaurant} />
+
+            {/* if the restaurant has promoted true then add promoted label to it*/}
+           
+            {restaurant.info.aggregatedDiscountInfoV3 != null ? (<RestaurantCardPromoted resData={ restaurant} />):( <RestaurantCard resData={restaurant} />)
+             
+            }
+        
           </Link>
         ))}
       </div>
