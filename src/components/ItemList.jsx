@@ -21,7 +21,7 @@ function ItemList({ items }) {
           <div className='flex justify-between align-middle'>
             <p className="text-xs self-center">{item.card.info.description}</p>
             <img
-              className="w-[150px] h-20 rounded-md self-end"
+              className="w-[150px] h-28 rounded-md self-end"
               src={CDN_URL + item.card.info.imageId}
               alt="img"
             ></img>

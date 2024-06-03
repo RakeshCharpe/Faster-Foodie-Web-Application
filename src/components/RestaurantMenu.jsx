@@ -26,9 +26,8 @@ const RestaurantMenu = () => {
     );
   console.log(categories);
   return (
-    <div className=" flex justify-center p-4">
-      <div className="">
-        <div className="bg-slate-100 p-4 rounded-md  flex justify-between shadow-md w-[50rem]">
+    <div className=" w-98 p-4">
+        <div className="bg-slate-100 p-4 flex rounded-md justify-between shadow-md">
           <div className="leading-8">
             <h1 className="font-bold mb-5 text-xl">{name}</h1>
             <h3 className="text-xs mt-2">{cuisines.join(" , ")}</h3>
@@ -49,31 +48,7 @@ const RestaurantMenu = () => {
             <RestaurantCategory data={e?.card?.card} />
           ))
         }
-
-        {/* <div className="m-2">
-          {itemCards.map((items) => (
-            <div className="flex justify-between border-2 border-grey-100 rounded-md p-3 ">
-              <div className="self-center">
-                <li key={items.card.info.id} className="list-none self-center">
-                  {items.card.info.name} - Rs.{" "}
-                  {items.card.info.price / 100 ||
-                    items.card.info.defaultPrice / 100}
-                </li>
-                <p className="text-xs text-pretty ">
-                  {items.card.info.description}
-                </p>
-              </div>
-              <img
-                key={IDBIndex}
-                className="w-[150px] h-21 rounded-md"
-                src={CDN_URL + items.card.info.imageId}
-                alt="food-image"
-              />
-            </div>
-          ))}
-        </div> */}
       </div>
-    </div>
   );
 };
 export default RestaurantMenu;
