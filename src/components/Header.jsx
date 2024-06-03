@@ -16,7 +16,7 @@ const Header = () => {
     console.log("useEffect");
   }, [btntext]);
   return (
-    <div className="flex justify-between bg-orange-500 shadow-lg m-2 rounded-md">
+    <div className="flex justify-between bg-orange-300 shadow-lg m-2 rounded-md">
       <div className="flex items-center p-4">
         <img
           className="w-12"

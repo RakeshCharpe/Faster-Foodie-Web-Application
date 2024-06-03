@@ -47,7 +47,7 @@ const Body = () => {
         <div className="flex">
           <input
             type="text"
-            className="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-orange-400 rounded-full py-1 pl-9 pr-3 shadow-sm focus:outline-none focus:border-orange-500 focus:ring-orange-500 focus:ring-1 text-sm mr-2"
+            className=" placeholder:text-slate-400 block bg-white w-full border border-orange-400 rounded-full py-1 pl-9 pr-3 shadow-sm focus:outline-none focus:border-orange-500 focus:ring-orange-500 focus:ring-1 text-sm mr-2"
             value={searchText}
             placeholder="search restaurants..."
             onChange={(e) => {
