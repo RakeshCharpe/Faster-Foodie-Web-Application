@@ -132,3 +132,8 @@
 > Lifting State Up sometimes we need to add lift state up to controlled child ***** Important ******
 > Props drilling ***** Important *****
 > React Context is used to overcome the problem of props drilling , we can access data of any level at level of point .
+> useContext hook is used get data from context component .
+> If we don't have hooks or used context in class based components then we need to used 
+       <UserContext.Consumer>
+              {(data) => data}
+       </UserContext.Consumer>

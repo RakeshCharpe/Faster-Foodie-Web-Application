@@ -25,7 +25,7 @@ const Body = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1165549&lng=79.05617269999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
-    console.log(json);
+    // console.log(json);
     // optional chaining
     setlistOfRestaurants(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
@@ -37,7 +37,7 @@ const Body = () => {
 
   const onlineStatus = useOnlineStatus();
   if (onlineStatus === false) return <h1>Look's like you are offline !!! Please check your connection</h1>
-  console.log(listOfRestaurants);
+  // console.log(listOfRestaurants);
 
 
   if (listOfRestaurants.length === 0) return <Shimmer />;
