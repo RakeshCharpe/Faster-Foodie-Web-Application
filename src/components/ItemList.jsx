@@ -18,8 +18,14 @@ function ItemList({ items }) {
               {item.card.info.price / 100 || item.card.info.defaultPrice / 100}
             </span>
           </div>
-          <div className='flex justify-between align-middle'>
+          <div className="flex justify-between align-middle">
             <p className="text-xs self-center">{item.card.info.description}</p>
+            <div className="">
+              <button className="p-2 bg-orange-700  text-white shadow-lg absolute rounded-md">
+                {" "}
+                Add +
+              </button>
+            </div>
             <img
               className="w-[150px] h-28 rounded-md self-end"
               src={CDN_URL + item.card.info.imageId}

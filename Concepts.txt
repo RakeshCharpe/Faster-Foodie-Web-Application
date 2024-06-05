@@ -124,3 +124,11 @@
 > Wrap component in Suspense component so till loading we show something 
 <Suspense> <Grocery /> <Suspense>
 > Higher order component is a function which takes the component and return the component .
+> To make toggle handleClick(){
+       setshowItems(!showitems);
+}
+> Controlled and Uncontrolled component if the state of component is managed by parent component then is called controlled component .
+> If component maintains there own state then it is called uncontrolled component.
+> Lifting State Up sometimes we need to add lift state up to controlled child ***** Important ******
+> Props drilling ***** Important *****
+> React Context is used to overcome the problem of props drilling , we can access data of any level at level of point .
